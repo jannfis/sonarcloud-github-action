@@ -22,7 +22,7 @@ ENV PATH=${PATH}:${SONAR_SCANNER_HOME}/bin:${NODEJS_HOME}/bin
 WORKDIR /opt
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends wget git jq unzip tar xz-utils \
+    && apt-get install -y --no-install-recommends wget git jq unzip tar xz-utils ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget -U "sonarcloud-github-action" -q -O sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip \
